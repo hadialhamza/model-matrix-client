@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  /* default theme will be declared here */
+  themes: light --default;
+}
+
+/* theme customization can be done here */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: blue;
+  --color-secondary: teal;
+}
+
+/* use smooth scroll behavior, default font size and font weight */
+body {
+  @apply scroll-smooth text-base font-normal;
+}
+
+/* customize daisy ui btn class */
+.btn {
+  @apply border-none rounded-md;
+}
+
+/* customize daisy ui container class */
+.container {
+  @apply container mx-auto px-4;
+}

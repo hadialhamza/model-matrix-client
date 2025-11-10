@@ -3,6 +3,8 @@ import MainLayout from "../Layouts/MainLayout";
 import HomePage from "../Components/Pages/Home/HomePage";
 import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Register/Register";
+import AllModels from "../Components/Pages/AllModels/AllModels";
+import AddModel from "../Components/Pages/AddModel/AddModel";
 
 // create a variable for router with create browser router
 const router = createBrowserRouter([
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
         path: "register",
         element: <Register />,
       },
+      {
+        path: "all-models",
+        element: <AllModels/>
+      },
+      {
+        path: "add-model",
+        element: <AddModel/>
+      }
     ],
   },
 ]);

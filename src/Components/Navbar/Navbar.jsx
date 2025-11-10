@@ -1,20 +1,67 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import useAuth from "../../Hooks/useAuth";
-import { BarChart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const { user, logout, loading } = useAuth();
-  const [menu, setMenu] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(true);
 
   const handleSetMenu = () => {
-    setMenu(!menu);
+    setMenuOpen(!menuOpen);
   };
 
   const logoutUser = () => {
     logout();
   };
+
+  const navLinks = (
+    <>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `px-3 py-1 rounded-full transition-all duration-300
+         ${
+           isActive
+             ? "font-semibold border-2 border-emerald-400 text-emerald-700 bg-emerald-50"
+             : "border-2 border-transparent text-gray-800 hover:border-emerald-200 hover:text-emerald-700"
+         }`
+        }
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        to="/all-models"
+        className={({ isActive }) =>
+          `px-3 py-1 rounded-full transition-all duration-300
+         ${
+           isActive
+             ? "font-semibold border-2 border-emerald-400 text-emerald-700 bg-emerald-50"
+             : "border-2 border-transparent text-gray-800 hover:border-emerald-200 hover:text-emerald-700"
+         }`
+        }
+      >
+        View Models
+      </NavLink>
+
+      <NavLink
+        to="/add-model"
+        className={({ isActive }) =>
+          `px-3 py-1 rounded-full transition-all duration-300
+         ${
+           isActive
+             ? "font-semibold border-2 border-emerald-400 text-emerald-700 bg-emerald-50"
+             : "border-2 border-transparent text-gray-800 hover:border-emerald-200 hover:text-emerald-700"
+         }`
+        }
+      >
+        Add Model
+      </NavLink>
+    </>
+  );
+
   return (
     <>
       <div className="bg-base-200 shadow-xl sticky top-0 z-10">
@@ -26,7 +73,7 @@ const Navbar = () => {
                   onClick={handleSetMenu}
                   className="md:hidden btn btn-ghost"
                 >
-                  {menu ? (
+                  {menuOpen ? (
                     <Menu strokeWidth={2.5} size={25} />
                   ) : (
                     <X strokeWidth={2.5} size={25} />
@@ -38,10 +85,10 @@ const Navbar = () => {
               </div>
             </div>
             <div className="navbar-center">
-              <ul className="space-x-6">
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/register">Register</NavLink>
+              <ul>
+                <li className="flex items-center gap-2 font-poppins text-gray-800">
+                  {navLinks}
+                </li>
               </ul>
             </div>
             <div className="navbar-end">
@@ -57,7 +104,7 @@ const Navbar = () => {
       </div>
       <div
         className={`bg-base-200 min-h-screen w-[300px] absolute top-0 ${
-          menu ? "-left-[300px]" : "left-0"
+          menuOpen ? "-left-[300px]" : "left-0"
         } transition-all duration-500 ease-in-out z-9`}
       >
         <div className="mt-20">

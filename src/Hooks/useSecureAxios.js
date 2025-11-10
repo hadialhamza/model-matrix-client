@@ -3,7 +3,7 @@ import useAuth from "./useAuth";
 
 // create instance of axios call
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://modelmatrixapi.vercel.app",
 });
 
 // custom hook for call axios with authorization header for secure apis

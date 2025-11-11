@@ -5,6 +5,8 @@ import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Register/Register";
 import AllModels from "../Components/Pages/AllModels/AllModels";
 import AddModel from "../Components/Pages/AddModel/AddModel";
+import MyPurchase from "../Components/Pages/MyPurchase/MyPurchase";
+import MyModels from "../Components/Pages/MyModels/MyModels";
 
 // create a variable for router with create browser router
 const router = createBrowserRouter([
@@ -30,12 +32,20 @@ const router = createBrowserRouter([
       },
       {
         path: "all-models",
-        element: <AllModels/>
+        element: <AllModels />,
       },
       {
         path: "add-model",
-        element: <AddModel/>
-      }
+        element: <AddModel />,
+      },
+      {
+        path: "my-purchase",
+        element: <MyPurchase />,
+      },
+      {
+        path: "my-models",
+        element: <MyModels />,
+      },
     ],
   },
 ]);

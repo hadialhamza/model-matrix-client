@@ -1,113 +1,25 @@
 import React from "react";
-import styled from "styled-components";
 
-const Card = () => {
+const Cardtocard = () => {
   return (
-    <StyledWrapper>
-      <div className="cardBox">
-        <div className="card">
-          <span className="text">Hover Me</span>
-          <div className="content">
-            <p>Hi, put your text here</p>
-          </div>
+    <div className="relative grid h-[300px] w-[270px] place-items-center overflow-hidden rounded-[20px] shadow-[0_2px_10px_rgba(0,0,0,0.4),0_2px_25px_rgba(0,0,0,0.5)]">
+      {/* Spinning gradient strip (replacement for .cardBox::before) */}
+      <div className="pointer-events-none absolute h-[150%] w-[40%] bg-gradient-to-r from-pink-500 via-orange-400 to-teal-300 animate-[spin_5s_linear_infinite]" />
+
+      {/* Inner card */}
+      <div className="group relative z-10 flex h-[95%] w-[95%] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-[20px] bg-[#000814] p-5 text-center text-white shadow-[inset_0_30px_60px_-12px_rgba(0,0,0,0.4),inset_0_18px_36px_-18px_rgba(0,0,0,0.5)]">
+        {/* Big ghost text */}
+        <span className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl font-extrabold opacity-10">
+          Hover Me
+        </span>
+
+        {/* Hover content */}
+        <div className="relative translate-y-full opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+          <p className="text-[1.6rem] leading-[25px]">Hi, put your text here</p>
         </div>
       </div>
-    </StyledWrapper>
+    </div>
   );
 };
 
-const StyledWrapper = styled.div`
-  .cardBox {
-    width: 270px;
-    height: 300px;
-    position: relative;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
-      rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
-  }
-
-  .card {
-    position: absolute;
-    width: 95%;
-    height: 95%;
-    background: #000814;
-    border-radius: 20px;
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: #ffffff;
-    overflow: hidden;
-    padding: 20px;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
-      rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
-  }
-
-  .card h3,
-  span {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    font-weight: 800;
-    pointer-events: none;
-    opacity: 0.1;
-  }
-
-  .text {
-    top: 50%;
-  }
-
-  .card .content h3 {
-    font-size: 3rem;
-    padding-bottom: 10px;
-  }
-
-  .card .content p {
-    font-size: 1.6rem;
-    line-height: 25px;
-  }
-
-  .card .content {
-    transform: translateY(100%);
-    opacity: 0;
-    transition: 0.3s ease-in-out;
-  }
-
-  .card:hover .content {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .cardBox::before {
-    content: "";
-    position: absolute;
-    width: 40%;
-    height: 150%;
-    background: #40e0d0;
-    background: -webkit-linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
-    background: linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
-    animation: glowing01 5s linear infinite;
-    transform-origin: center;
-    animation: glowing 5s linear infinite;
-  }
-
-  @keyframes glowing {
-    0% {
-      transform: rotate(0);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
-export default Card;
+export default Cardtocard;

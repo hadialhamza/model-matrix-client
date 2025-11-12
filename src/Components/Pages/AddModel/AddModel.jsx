@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const AddModel = () => {
-    return (
-        <div>
-            <h1>Add Model</h1>
-        </div>
-    );
+  return (
+    <div>
+    </div>
+  );
 };
 
 export default AddModel;

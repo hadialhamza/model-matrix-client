@@ -1,77 +1,35 @@
 import React from "react";
-import styled from "styled-components";
 
-const Card = () => {
+const HoverCard = ({
+  title = "Card title",
+  body = "Here are the details of the card",
+  buttonText = "More info",
+  onClick,
+}) => {
   return (
-    <StyledWrapper>
-      <div className="card">
-        <div className="card-details">
-          <p className="text-title">Card title</p>
-          <p className="text-body">Here are the details of the card</p>
-        </div>
-        <button className="card-button">More info</button>
+    <div className="group relative h-[254px] w-[190px] overflow-visible rounded-2xl border-2 border-slate-300 bg-slate-100 p-7 transition duration-500 ease-out hover:border-sky-500 hover:shadow-[0_4px_18px_rgba(0,0,0,0.25)]">
+      {/* Card details */}
+      <div className="grid h-full place-content-center gap-2 text-black">
+        <p className="text-[1.5em] font-bold">{title}</p>
+        <p className="text-sm text-slate-500">{body}</p>
       </div>
-    </StyledWrapper>
+
+      {/* Button */}
+      <button
+        onClick={onClick}
+        className="
+          absolute left-1/2 bottom-0
+          w-[60%] -translate-x-1/2 translate-y-[125%]
+          rounded-2xl bg-sky-500 px-4 py-2 text-sm font-semibold text-white
+          opacity-0 shadow-sm
+          transition-all duration-300 ease-out
+          group-hover:translate-y-1/2 group-hover:opacity-100
+        "
+      >
+        {buttonText}
+      </button>
+    </div>
   );
 };
 
-const StyledWrapper = styled.div`
-  .card {
-    width: 190px;
-    height: 254px;
-    border-radius: 20px;
-    background: #f5f5f5;
-    position: relative;
-    padding: 1.8rem;
-    border: 2px solid #c3c6ce;
-    transition: 0.5s ease-out;
-    overflow: visible;
-  }
-
-  .card-details {
-    color: black;
-    height: 100%;
-    gap: 0.5em;
-    display: grid;
-    place-content: center;
-  }
-
-  .card-button {
-    transform: translate(-50%, 125%);
-    width: 60%;
-    border-radius: 1rem;
-    border: none;
-    background-color: #008bf8;
-    color: #fff;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    opacity: 0;
-    transition: 0.3s ease-out;
-  }
-
-  .text-body {
-    color: rgb(134, 134, 134);
-  }
-
-  /*Text*/
-  .text-title {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  /*Hover*/
-  .card:hover {
-    border-color: #008bf8;
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-  }
-
-  .card:hover .card-button {
-    transform: translate(-50%, 50%);
-    opacity: 1;
-  }
-`;
-
-export default Card;
+export default HoverCard;

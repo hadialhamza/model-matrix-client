@@ -7,7 +7,7 @@ import Logo from "../Logo/Logo";
 const Navbar = () => {
   const { user, logout, loading } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
-  console.log(user);
+  // console.log(user);
 
   const handleSetMenu = () => {
     setMenuOpen(!menuOpen);

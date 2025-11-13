@@ -9,6 +9,7 @@ import MyPurchase from "../Components/Pages/MyPurchase/MyPurchase";
 import MyModels from "../Components/Pages/MyModels/MyModels";
 import PrivateRoute from "./PrivateRoute";
 import ModelDetails from "../components/pages/modelDetails/ModelDetails";
+import EditModel from "../components/pages/updateModel/UpdateModel";
 
 // create a variable for router with create browser router
 const router = createBrowserRouter([
@@ -49,6 +50,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ModelDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-model/:id",
+        element: (
+          <PrivateRoute>
+            <EditModel />
           </PrivateRoute>
         ),
       },

@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Mail, Lock, Eye, EyeOff, LayoutDashboard } from "lucide-react";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -79,7 +79,7 @@ const Login = () => {
   const isSubmitting = localLoading || loading;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-slate-950 to-slate-900 flex items-center justify-center px-4 py-8">
+    <div className="min-h-screen bg-linear-to-br from-emerald-900 via-slate-950 to-slate-900 flex items-center justify-center px-4 py-8">
       <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left side */}
         <motion.div
@@ -127,7 +127,7 @@ const Login = () => {
                 <span className="font-semibold text-emerald-400">18</span>
               </div>
               <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                <div className="h-full w-2/3 bg-gradient-to-r from-emerald-400 to-emerald-300" />
+                <div className="h-full w-2/3 bg-linear-to-r from-emerald-400 to-emerald-300" />
               </div>
             </div>
           </div>
@@ -256,7 +256,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-400 text-slate-950 font-medium text-sm py-2.5 shadow-lg shadow-emerald-900/40 hover:from-emerald-400 hover:to-emerald-300 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
+              className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-linear-to-r from-emerald-500 to-emerald-400 text-slate-950 font-medium text-sm py-2.5 shadow-lg shadow-emerald-900/40 hover:from-emerald-400 hover:to-emerald-300 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
             >
               {isSubmitting ? (
                 <>

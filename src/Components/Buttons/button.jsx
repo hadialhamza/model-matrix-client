@@ -24,7 +24,7 @@ const Button = ({
         bg-white
         border-2
         border-transparent
-        bg-gradient-to-r from-white to-gray-50
+        bg-linear-to-r from-white to-gray-50
         hover:from-gray-50 hover:to-gray-100
         text-indigo-700
         font-semibold
@@ -43,7 +43,7 @@ const Button = ({
         
         /* Gradient border using pseudo-element */
         before:absolute before:inset-0 before:rounded-lg before:p-0.5
-        before:bg-gradient-to-r before:from-indigo-600 before:to-emerald-400
+        before:bg-linear-to-r before:from-indigo-600 before:to-emerald-400
         before:-z-10
       `}
     >

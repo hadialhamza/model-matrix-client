@@ -285,7 +285,7 @@ const UpdateModel = () => {
                     type="text"
                     value={model.dataset}
                     onChange={handleChange}
-                    placeholder="e.g. CIFAR-10, custom hospital dataset"
+                    placeholder="e.g. custom hospital dataset"
                     className="w-full rounded-2xl bg-slate-900/80 border border-slate-700/80 pl-10 pr-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 focus:border-emerald-500/80 transition-all"
                     required
                   />

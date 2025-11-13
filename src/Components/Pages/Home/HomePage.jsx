@@ -1,8 +1,8 @@
 import React from "react";
-import Slider from "../../Slider/Slider";
-import RecentModels from "../../Sections/RecentModels";
-import AboutAiModels from "../../Sections/AboutAiModels";
-import GetStarted from "../../Sections/GetStarted";
+import Slider from "../../slider/Slider";
+import RecentModels from "../../sections/RecentModels";
+import AboutAiModels from "../../sections/AboutAiModels";
+import GetStarted from "../../sections/GetStarted";
 
 const HomePage = () => {
   return (

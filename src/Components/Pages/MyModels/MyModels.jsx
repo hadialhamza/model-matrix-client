@@ -8,7 +8,7 @@ import useAuth from "../../../hooks/useAuth";
 import useSecureAxios from "../../../hooks/useSecureAxios";
 
 const MyModels = () => {
-  const { user, loading: authLoading } = useAuth();
+  const { user } = useAuth();
   const axiosSecure = useSecureAxios();
 
   const [models, setModels] = useState([]);
@@ -20,7 +20,6 @@ const MyModels = () => {
   }, []);
 
   useEffect(() => {
-    if (authLoading) return;
     console.log(user?.email);
     if (!user?.email) return;
 
@@ -28,7 +27,7 @@ const MyModels = () => {
       try {
         // 🔧 adjust URL if your backend route is different
         const { data } = await axiosSecure.get(
-          `/my-models?email=${encodeURIComponent(user.email)}`
+          `/models/user?email=${user.email}`
           // e.g. `/models/user?email=${user.email}`
         );
         console.log(data);
@@ -53,7 +52,7 @@ const MyModels = () => {
     };
 
     fetchMyModels();
-  }, [axiosSecure, user?.email]);
+  }, []);
 
   const handleDelete = async (id) => {
     const result = await Swal.fire({
@@ -217,7 +216,7 @@ const MyModels = () => {
                     <td className="py-3 pr-3 align-top">
                       <div className="flex items-center gap-1.5 text-slate-200">
                         <Layers className="h-3.5 w-3.5 text-emerald-400" />
-                        <span className="truncate max-w-[120px] md:max-w-[160px]">
+                        <span className="truncate max-w-[120px] md:max-w-40">
                           {model.framework || "—"}
                         </span>
                       </div>

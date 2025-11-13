@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
 import { Mail, Menu, User, X } from "lucide-react";
-import Logo from "../Logo/Logo";
 import useAuth from "../../hooks/useAuth";
+import Logo from "../logo/Logo";
 
 const Navbar = () => {
   const { user, logout, loading } = useAuth();

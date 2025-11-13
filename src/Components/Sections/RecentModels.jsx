@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useAxios from "../../Hooks/useAxios";
-import RecentModelCard from "../Cards/RecentModelCard";
-import HoverCard from "../Cards/Hover";
+import RecentModelCard from "../cards/RecentModelCard";
 
 const RecentModels = () => {
   const api = useAxios();

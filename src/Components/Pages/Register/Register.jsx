@@ -13,7 +13,7 @@ import {
   EyeOff,
   ArrowRight,
 } from "lucide-react";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);

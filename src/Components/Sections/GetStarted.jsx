@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 
-const GetStartedSectionLight = () => {
+const GetStarted = () => {
   return (
     <section className="section-container mb-20">
       <div className="bg-base-100 shadow-[0_1px_15px_rgba(0,0,0,0.15)] p-5 md:p-6 lg:p-8 rounded-2xl">
@@ -212,4 +212,4 @@ const GetStartedSectionLight = () => {
   );
 };
 
-export default GetStartedSectionLight;
+export default GetStarted;

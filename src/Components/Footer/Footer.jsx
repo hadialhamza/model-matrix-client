@@ -1,7 +1,7 @@
 // src/components/layout/Footer.jsx
 import React from "react";
 import { Link, NavLink } from "react-router";
-import SocialTooltip from "../Buttons/sociallink";
+import SocialTooltip from "../buttons/sociallink";
 
 const Footer = () => {
   return (
@@ -137,13 +137,17 @@ const Footer = () => {
         <div className="mt-8 border-t border-slate-800 pt-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           {/* Social links using SocialTooltip */}
           <div className="flex flex-col gap-2">
-            <span className="text-xs text-slate-500">Follow ModelMatrix AI</span>
+            <span className="text-xs text-slate-500">
+              Follow ModelMatrix AI
+            </span>
             <SocialTooltip />
           </div>
 
           {/* Copyright / assignment note */}
           <div className="text-xs text-slate-500 text-left md:text-right">
-            <p>© {new Date().getFullYear()} ModelMatrix AI. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} ModelMatrix AI. All rights reserved.
+            </p>
             <p>
               This footer is designed as part of an assignment to demonstrate
               layout, routing and static sections.

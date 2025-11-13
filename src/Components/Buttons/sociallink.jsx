@@ -55,12 +55,12 @@ const SocialTooltip = () => {
             rel="noreferrer"
             className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white text-slate-700 shadow-md transition hover:shadow-xl"
           >
-            <span className="absolute inset-0 translate-y-full bg-gradient-to-tr from-[#405DE6] via-[#C13584] to-[#FD1F1F] transition-transform duration-300 ease-in-out group-hover:translate-y-0" />
+            <span className="absolute inset-0 translate-y-full bg-linear-to-tr from-[#405DE6] via-[#C13584] to-[#FD1F1F] transition-transform duration-300 ease-in-out group-hover:translate-y-0" />
 
             <FaInstagram className="relative z-10 text-[18px] text-slate-700 group-hover:text-white transition-colors duration-300" />
           </a>
 
-          <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 rounded-md bg-gradient-to-tr from-[#405DE6] via-[#C13584] to-[#FD1F1F] px-3 py-1 text-xs text-white opacity-0 shadow-md transition-all duration-300 group-hover:-top-12 group-hover:opacity-100">
+          <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 rounded-md bg-linear-to-tr from-[#405DE6] via-[#C13584] to-[#FD1F1F] px-3 py-1 text-xs text-white opacity-0 shadow-md transition-all duration-300 group-hover:-top-12 group-hover:opacity-100">
             Instagram
           </span>
         </li>

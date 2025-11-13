@@ -12,10 +12,10 @@ import {
   ArrowUpDown,
 } from "lucide-react";
 import { Link } from "react-router";
-import useAxios from "../../../Hooks/useAxios";
+import useSecureAxios from "../../../hooks/useSecureAxios";
 
 const AllModels = () => {
-  const axios = useAxios();
+  const axios = useSecureAxios();
   const [models, setModels] = useState([]);
   const [loading, setLoading] = useState(true);
 

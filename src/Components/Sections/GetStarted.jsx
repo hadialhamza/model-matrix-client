@@ -5,8 +5,8 @@ const GetStartedSectionLight = () => {
   return (
     <section className="section-container mb-20">
       <div className="bg-base-100 shadow-[0_1px_15px_rgba(0,0,0,0.15)] p-5 md:p-6 lg:p-8 rounded-2xl">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
+        <div className="flex flex-col gap-4 md:gap-8 lg:gap-4 lg:flex-row lg:items-end md:justify-between">
+          <div className="lg:w-2/3">
             <span className="small-title">- Get Started -</span>
             <h2 className="section-title">
               Get Started with{" "}
@@ -182,7 +182,7 @@ const GetStartedSectionLight = () => {
             </p>
           </details>
         </div>
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-slate-200 bg-emerald-50 px-6 py-6 shadow-sm md:flex-row md:items-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-slate-200 bg-emerald-50 px-6 py-6 shadow-sm lg:flex-row lg:items-center">
           <div>
             <p className="text-lg font-semibold text-emerald-900">
               Ready to manage your AI models the clean way?

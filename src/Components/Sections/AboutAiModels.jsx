@@ -4,12 +4,12 @@ const AboutAiModels = () => {
   return (
     <section className="section-container">
       <div className="bg-base-100 shadow-[0_1px_15px_rgba(0,0,0,0.15)] p-5 md:p-6 lg:p-8 rounded-2xl">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <span className="small-title">- About AI Models -</span>
+        <h2 className="section-title">
+          About <span className="text-emerald-600">AI Models</span>
+        </h2>
+        <div className="flex flex-col gap-6 md:gap-8 md:flex-row md:items-start md:justify-between">
           <div className="flex-1 space-y-4">
-            <span className="small-title">- About AI Models -</span>
-            <h2 className="section-title">
-              About <span className="text-emerald-600">AI Models</span>
-            </h2>
             <p className="section-subtitle">
               AI models are reusable intelligence blocks that learn patterns
               from data to classify, detect, generate, and forecast. From{" "}
@@ -99,8 +99,8 @@ const AboutAiModels = () => {
                 <span className="font-semibold text-slate-900">
                   static section
                 </span>{" "}
-                to explain what AI models are and how they are managed in your
-                application, as required in the assignment.
+                to explain what AI models are and how they are managed in our
+                application.
               </div>
             </div>
           </div>
@@ -131,7 +131,6 @@ const AboutAiModels = () => {
             </ul>
           </div>
 
-          {/* Lifecycle */}
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-700">
               Model Lifecycle in App
@@ -148,7 +147,6 @@ const AboutAiModels = () => {
             </ol>
           </div>
 
-          {/* Comparison / CTA */}
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-700">
               Why not ad-hoc files?
@@ -171,7 +169,7 @@ const AboutAiModels = () => {
             </div>
             <div className="mt-5">
               <a
-                href="/models"
+                href="/all-models"
                 className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-500"
               >
                 Browse Models
@@ -179,8 +177,6 @@ const AboutAiModels = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom note about ai models */}
         <div className="mt-8 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-700">
           Tips: If you want to learn more about AI models, login to our website
           and check out the pages.

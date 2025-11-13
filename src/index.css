@@ -43,7 +43,7 @@ body {
 
 .section-title {
   font-family: "Poppins", sans-serif;
-  @apply text-3xl font-bold md:text-4xl lg:text-[2.5rem] text-gray-800/93 mb-4 lg:mb-5;
+  @apply text-3xl font-bold md:text-4xl lg:text-[2.8rem] text-gray-800/93 mb-4 lg:mb-5;
 }
 
 .small-title {

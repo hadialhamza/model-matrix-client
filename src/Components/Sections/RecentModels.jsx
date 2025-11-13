@@ -24,24 +24,26 @@ const RecentModels = () => {
   return (
     <section>
       <div className="section-container">
-        <div className="bg-white mb-20 text-center md:text-left flex flex-col gap-8 lg:flex-row md:items-center md:justify-between p-10 rounded-2xl shadow-[0_1px_15px_rgba(0,0,0,0.15)]">
+        <div className="bg-base-100 mb-20 text-center md:text-left flex flex-col md:flex-row md:items-end sm:justify-between rounded-2xl shadow-[0_1px_15px_rgba(0,0,0,0.15)] p-5 md:p-6 lg:p-8">
           <div>
             <span className="inline-flex items-center rounded-full border border-emerald-400 bg-emerald-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-emerald-800 mb-5">
               - Latest Models -
             </span>
-            <h2 className="section-title">Recent AI Models</h2>
+            <h2 className="section-title">
+              Latest <span className="text-emerald-600">AI Models</span>
+            </h2>
             <p className="section-subtitle">
               Explore the latest AI models added to ModelMatrix AI. Recently
               created models appear here automatically.
             </p>
           </div>
-          <div className="md:w-1/2 text-center lg:text-end pr-4 md:pr-8">
-            <a
+          <div className="md:w-1/2 text-center md:text-end">
+            <button
               href="/all-models"
-              className="text-sm md:text-base lg:text-lg font-semibold rounded-full border-2 border-emerald-300 bg-emerald-100 px-6 p-2 md:py-3 text-emerald-600 hover:text-emerald-800"
+              className="text-sm md:text-base lg:text-lg font-semibold rounded-full border-2 border-emerald-300 bg-emerald-100 px-4 md:px-6 py-2 text-emerald-600 hover:text-emerald-800"
             >
               View all models →
-            </a>
+            </button>
           </div>
         </div>
 

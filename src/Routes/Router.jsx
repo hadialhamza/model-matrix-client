@@ -7,6 +7,7 @@ import AllModels from "../Components/Pages/AllModels/AllModels";
 import AddModel from "../Components/Pages/AddModel/AddModel";
 import MyPurchase from "../Components/Pages/MyPurchase/MyPurchase";
 import MyModels from "../Components/Pages/MyModels/MyModels";
+import PrivateRoute from "./PrivateRoute";
 
 // create a variable for router with create browser router
 const router = createBrowserRouter([
@@ -31,12 +32,16 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "all-models",
+        path: "models",
         element: <AllModels />,
       },
       {
         path: "add-model",
-        element: <AddModel />,
+        element: (
+          <PrivateRoute>
+            <AddModel />,
+          </PrivateRoute>
+        ),
       },
       {
         path: "my-purchase",

@@ -1,5 +1,5 @@
 import axios from "axios";
-import useAuth from "./useAuth";
+import useAuth from "./useAuth.js";
 
 // create instance of axios call
 const axiosInstance = axios.create({
@@ -14,7 +14,7 @@ const useSecureAxios = () => {
   // add authorization header to axios instance
   axiosInstance.interceptors.request.use((config) => {
     // add authorization token to header
-    config.headers.Authorization = `Bearer ${user.accessToken}`;
+    config.headers.authorization = `Bearer ${user.accessToken}`;
     return config;
   });
   return axiosInstance;

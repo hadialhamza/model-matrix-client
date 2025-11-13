@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
-import useAuth from "../../Hooks/useAuth";
 import { Mail, Menu, User, X } from "lucide-react";
 import Logo from "../Logo/Logo";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
   const { user, logout, loading } = useAuth();
@@ -34,7 +34,7 @@ const Navbar = () => {
       </NavLink>
 
       <NavLink
-        to="/all-models"
+        to="/models"
         className={({ isActive }) =>
           `w-full md:w-auto px-3 py-1 rounded-full transition-all duration-300
          ${
@@ -90,8 +90,8 @@ const Navbar = () => {
                   >
                     <div className="hidden md:block w-11 rounded-full ring-2 ring-emerald-500 overflow-hidden">
                       <img
-                        src={user.photoURL}
-                        alt={user.displayName || "User avatar"}
+                        src={user?.photoURL}
+                        alt={user?.displayName || "User avatar"}
                         className="object-cover w-full h-full"
                       />
                     </div>

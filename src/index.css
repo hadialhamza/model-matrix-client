@@ -24,7 +24,7 @@
 /* use smooth scroll behavior, default font size and font weight */
 body {
   font-family: "Inter", sans-serif;
-  @apply scroll-smooth bg-base-100 text-base font-normal;
+  @apply scroll-smooth bg-base-200 text-base font-normal;
 }
 
 /* customize daisy ui btn class */
@@ -38,16 +38,16 @@ body {
 }
 
 .section-container {
-  @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  @apply max-w-[1400px] mx-auto px-5 md:px-6 lg:px-8;
 }
 
 .section-title {
   font-family: "Poppins", sans-serif;
-  @apply text-3xl font-bold md:text-4xl text-slate-800 mb-3;
+  @apply text-3xl font-bold md:text-4xl lg:text-[2.5rem] text-gray-800/93 mb-4 lg:mb-5;
 }
 
 .section-subtitle {
-  @apply text-sm md:text-base text-slate-600 font-medium;
+  @apply text-sm md:text-base lg:text-lg text-gray-600 font-medium;
 }
 
 /* Customize daisy ui button */

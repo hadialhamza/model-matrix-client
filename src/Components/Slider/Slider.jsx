@@ -198,7 +198,7 @@ const Slider = () => {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
-        className="h-[550px] lg:h-[580px]"
+        className="h-[550px] lg:h-[650px]"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
@@ -227,7 +227,7 @@ const Slider = () => {
                 <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/80 to-slate-900/30"></div>
 
                 <div className="absolute inset-0 flex items-center">
-                  <div className="mx-auto w-full max-w-6xl px-4 md:px-8 lg:px-10">
+                  <div className="section-container w-full px-8! !md:px-0">
                     <SlideContent slide={slide} isActive={isActive} />
                   </div>
                 </div>

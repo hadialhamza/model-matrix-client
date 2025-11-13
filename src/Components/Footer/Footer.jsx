@@ -89,7 +89,7 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink
-                  to="/my-purchases"
+                  to="/my-purchase"
                   className={({ isActive }) =>
                     `transition-colors hover:text-emerald-300 ${
                       isActive ? "text-emerald-400" : "text-slate-300"

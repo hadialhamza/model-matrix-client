@@ -20,13 +20,21 @@ const MyModels = () => {
   }, []);
 
   useEffect(() => {
-    axiosSecure.get(`/models?email=${user?.email}`).then((res) => {
-      const myModels = res.data.result;
-      console.log(myModels);
-      setModels(myModels);
+    axiosSecure.get(`/my-models?email.=${user.email}`).then((res) => {
+      console.log(res.data.result);
+      setModels(res.data.result);
       setLoading(false);
     });
   }, [user, axiosSecure]);
+
+  // useEffect(() => {
+  //   axiosSecure.get(`/models?email=${user?.email}`).then((res) => {
+  //     const myModels = res.data.result;
+  //     console.log(myModels);
+  //     setModels(myModels);
+  //     setLoading(false);
+  //   });
+  // }, [user, axiosSecure]);
 
   const handleDelete = async (id) => {
     const result = await Swal.fire({

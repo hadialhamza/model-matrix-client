@@ -11,7 +11,7 @@ import {
   ArrowLeft,
   ShoppingCart,
 } from "lucide-react";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 // import useAxios from "../../../Hooks/useAxios";
 import useSecureAxios from "../../../hooks/useSecureAxios";
 import { toast } from "react-toastify";

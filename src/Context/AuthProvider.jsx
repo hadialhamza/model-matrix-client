@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import AuthContext from "./AuthContext";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -11,6 +10,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
+import AuthContext from "./AuthContext";
 
 // Google auth provider for google popup login
 const googleProvider = new GoogleAuthProvider();

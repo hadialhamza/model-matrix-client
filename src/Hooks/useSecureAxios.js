@@ -1,5 +1,5 @@
 import axios from "axios";
-import useAuth from "./useAuth.js";
+import useAuth from "./useAuth";
 
 // create instance of axios call
 const axiosInstance = axios.create({

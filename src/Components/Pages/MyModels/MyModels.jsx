@@ -3,12 +3,12 @@ import { Link } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Cpu, Layers, ListTree, Database, Trash2, Pencil } from "lucide-react";
-import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 import useSecureAxios from "../../../hooks/useSecureAxios";
-import { toast } from "react-toastify";
 
 const MyModels = () => {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const axiosSecure = useSecureAxios();
 
   const [models, setModels] = useState([]);
@@ -20,15 +20,18 @@ const MyModels = () => {
   }, []);
 
   useEffect(() => {
+    if (authLoading) return;
+    console.log(user?.email);
     if (!user?.email) return;
 
     const fetchMyModels = async () => {
       try {
-        // 🔧 Adjust this URL if your backend uses a different route
+        // 🔧 adjust URL if your backend route is different
         const { data } = await axiosSecure.get(
           `/my-models?email=${encodeURIComponent(user.email)}`
           // e.g. `/models/user?email=${user.email}`
         );
+        console.log(data);
 
         const list = Array.isArray(data)
           ? data
@@ -39,7 +42,11 @@ const MyModels = () => {
         setModels(list);
       } catch (err) {
         console.error("Failed to fetch my models:", err);
-        toast.error("Failed to load your models.");
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Failed to load your models.",
+        });
       } finally {
         setLoading(false);
       }
@@ -49,14 +56,22 @@ const MyModels = () => {
   }, [axiosSecure, user?.email]);
 
   const handleDelete = async (id) => {
-    const confirm = window.confirm(
-      "Are you sure you want to delete this model? This action cannot be undone."
-    );
-    if (!confirm) return;
+    const result = await Swal.fire({
+      icon: "warning",
+      title: "Are you sure?",
+      text: "This will permanently delete the model.",
+      showCancelButton: true,
+      confirmButtonColor: "#ef4444",
+      cancelButtonColor: "#6b7280",
+      confirmButtonText: "Yes, delete it",
+    });
+
+    if (!result.isConfirmed) return;
 
     setDeletingId(id);
+
     try {
-      // 🔧 Adjust if your delete endpoint is different
+      // 🔧 adjust endpoint if needed
       const { data } = await axiosSecure.delete(`/models/${id}`);
       console.log("delete response:", data);
 
@@ -65,13 +80,26 @@ const MyModels = () => {
 
       if (deleted) {
         setModels((prev) => prev.filter((m) => m._id !== id));
-        toast.success("Model deleted successfully.");
+        Swal.fire({
+          icon: "success",
+          title: "Deleted",
+          text: "Model deleted successfully.",
+          confirmButtonColor: "#22c55e",
+        });
       } else {
-        toast.error("Failed to delete model.");
+        Swal.fire({
+          icon: "error",
+          title: "Failed",
+          text: "Failed to delete model.",
+        });
       }
     } catch (err) {
       console.error(err);
-      toast.error("Failed to delete model.");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Failed to delete model.",
+      });
     } finally {
       setDeletingId(null);
     }
@@ -139,7 +167,6 @@ const MyModels = () => {
             transition={{ duration: 0.4, delay: 0.05 }}
             className="bg-slate-950/80 border border-slate-800/80 rounded-3xl p-4 md:p-6 shadow-xl shadow-emerald-900/25 overflow-x-auto"
           >
-            {/* Table header */}
             <table className="min-w-full text-sm text-left align-middle">
               <thead>
                 <tr className="text-[11px] uppercase tracking-[0.18em] text-slate-400 border-b border-slate-800/80">

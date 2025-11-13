@@ -8,6 +8,7 @@ import AddModel from "../Components/Pages/AddModel/AddModel";
 import MyPurchase from "../Components/Pages/MyPurchase/MyPurchase";
 import MyModels from "../Components/Pages/MyModels/MyModels";
 import PrivateRoute from "./PrivateRoute";
+import ModelDetails from "../components/pages/modelDetails/ModelDetails";
 
 // create a variable for router with create browser router
 const router = createBrowserRouter([
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddModel />,
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "models/:id",
+        element: (
+          <PrivateRoute>
+            <ModelDetails />
           </PrivateRoute>
         ),
       },

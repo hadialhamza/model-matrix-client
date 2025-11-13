@@ -6,7 +6,7 @@ import GetStarted from "../../Sections/GetStarted";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="space-y-20">
       <Slider />
       <RecentModels />
       <AboutAiModels />

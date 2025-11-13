@@ -22,10 +22,13 @@ const RecentModels = () => {
   }, [api]);
 
   return (
-    <section className="mt-20">
+    <section>
       <div className="section-container">
-        <div className="mb-20 text-center md:text-left flex flex-col gap-8 lg:flex-row md:items-center md:justify-between p-10 rounded-2xl shadow-[0_1px_15px_rgba(0,0,0,0.15)]">
+        <div className="bg-white mb-20 text-center md:text-left flex flex-col gap-8 lg:flex-row md:items-center md:justify-between p-10 rounded-2xl shadow-[0_1px_15px_rgba(0,0,0,0.15)]">
           <div>
+            <span className="inline-flex items-center rounded-full border border-emerald-400 bg-emerald-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-emerald-800 mb-5">
+              - Latest Models -
+            </span>
             <h2 className="section-title">Recent AI Models</h2>
             <p className="section-subtitle">
               Explore the latest AI models added to ModelMatrix AI. Recently

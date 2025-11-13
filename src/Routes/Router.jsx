@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/update-model/:id",
+        path: "update-model/:id",
         element: (
           <PrivateRoute>
             <EditModel />
@@ -63,11 +63,19 @@ const router = createBrowserRouter([
       },
       {
         path: "my-purchase",
-        element: <MyPurchase />,
+        element: (
+          <PrivateRoute>
+            <MyPurchase />
+          </PrivateRoute>
+        ),
       },
       {
         path: "my-models",
-        element: <MyModels />,
+        element: (
+          <PrivateRoute>
+            <MyModels />
+          </PrivateRoute>
+        ),
       },
     ],
   },

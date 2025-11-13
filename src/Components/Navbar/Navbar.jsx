@@ -91,7 +91,7 @@ const Navbar = () => {
                     <div className="hidden md:block w-11 rounded-full ring-2 ring-emerald-500 overflow-hidden">
                       <img
                         src={user?.photoURL}
-                        alt={user?.displayName || "User avatar"}
+                        alt=""
                         className="object-cover w-full h-full"
                       />
                     </div>

@@ -20,39 +20,13 @@ const MyModels = () => {
   }, []);
 
   useEffect(() => {
-    console.log(user?.email);
-    if (!user?.email) return;
-
-    const fetchMyModels = async () => {
-      try {
-        // 🔧 adjust URL if your backend route is different
-        const { data } = await axiosSecure.get(
-          `/models/user?email=${user.email}`
-          // e.g. `/models/user?email=${user.email}`
-        );
-        console.log(data);
-
-        const list = Array.isArray(data)
-          ? data
-          : Array.isArray(data?.data)
-          ? data.data
-          : [];
-
-        setModels(list);
-      } catch (err) {
-        console.error("Failed to fetch my models:", err);
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Failed to load your models.",
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchMyModels();
-  }, []);
+    axiosSecure.get(`/models?email=${user?.email}`).then((res) => {
+      const myModels = res.data.result;
+      console.log(myModels);
+      setModels(myModels);
+      setLoading(false);
+    });
+  }, [user, axiosSecure]);
 
   const handleDelete = async (id) => {
     const result = await Swal.fire({

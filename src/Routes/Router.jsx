@@ -10,6 +10,7 @@ import AllModels from "../components/pages/allModels/AllModels";
 import AddModel from "../components/pages/addModel/AddModel";
 import MyPurchase from "../components/pages/myPurchase/MyPurchase";
 import MyModels from "../components/pages/myModels/MyModels";
+import ErrorPage from "../components/pages/errorPage/ErrorPage";
 
 // create a variable for router with create browser router
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     // layouts will be mentioned here
     path: "/", // path: "/" will be the root path
     element: <MainLayout />, // this is main layout
-    errorElement: <div>404 Page Not Found</div>, // this is error 404 page
+    errorElement: <ErrorPage />, // this is error 404 page
 
     // children will render in the middle of the layout in outlet section
     children: [
